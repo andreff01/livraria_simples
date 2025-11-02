@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ livro.titulo }}</h1>
+<ul>
+    <li><b>Autor:</b> {{ livro.autor }}</li>
+    <li><b>Ano de publicação:</b> {{ livro.ano_publicacao }}</li>
+    <li><b>Editora:</b> {{ livro.editora }}</li>
+    <li><b>ISBN:</b> {{ livro.isbn }}</li>
+</ul>
+<a href="{% url 'livro-listar' %}">Voltar</a> |
+<a href="{% url 'livro-editar' livro.pk %}">Editar</a> |
+<a href="{% url 'livro-excluir' livro.pk %}">Excluir</a>
+{% endblock %}

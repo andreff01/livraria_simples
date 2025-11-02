@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Livros cadastrados</h1>
+<a href="{% url 'livro-criar' %}">Novo Livro</a>
+<table border="1">
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Ano</th>
+        <th>Editora</th>
+        <th>ISBN</th>
+        <th>Ações</th>
+    </tr>
+    {% for livro in livros %}
+    <tr>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.ano_publicacao }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.isbn }}</td>
+        <td>
+            <a href="{% url 'livro-detalhe' livro.pk %}">Detalhes</a> |
+            <a href="{% url 'livro-editar' livro.pk %}">Editar</a> |
+            <a href="{% url 'livro-excluir' livro.pk %}">Excluir</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">Nenhum livro cadastrado.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
