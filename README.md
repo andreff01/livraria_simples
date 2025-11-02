@@ -17,11 +17,6 @@ Sistema web simples para cadastro de livros, desenvolvido em Django, utilizando 
 | `/livro/<id>/excluir/`      | Exclui um livro                  |
 | `/admin/`                   | Admin do Django                  |
 
-## Prints das telas
-
-Adicione abaixo prints das principais telas do sistema:
-
-
 ### 1. Tela de listagem de livros
 ![Listagem de livros](prints/teladelistagem.png)
 
